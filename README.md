@@ -18,3 +18,13 @@ Initialize the robot by launching turtlebot3_bringup and realsense camera
 	`python3 ros_cam.py`
 	`python3 aruco_tracker.py`
 	`python3 velo_control.py`
+
+### ROS Camera Script
+This script subscribes to the ROS camera node of the R200 camera, receiving the image_raw of the color and depth topics.
+
+### Aruco Tracker Script
+This script controls the detection of Aruco Markers within the images gained from the camera. It does this by importing a library of Aruco Markers that will then be compared against anything that is found to be a Marker within the image published (line 60-61).
+
+If a marker is successfully detected, the rest of the code will detect the four corners of the marker and create a box enclosing the marker. From these corners, a centre point of the marker is calculated and displayed on the image.
+
+### Velocity Control Script
