@@ -28,3 +28,4 @@ This script controls the detection of Aruco Markers within the images gained fro
 If a marker is successfully detected, the rest of the code will detect the four corners of the marker and create a box enclosing the marker. From these corners, a centre point of the marker is calculated and displayed on the image.
 
 ### Velocity Control Script
+This script take the pixel coordinate of the centre point of the marker as an input. It then calculate the average depth value around that pixel on the depth image and generate linear velocity message accordingly. It also generate angular velocity message depending on the pixel coordinate. Then it publish the message to control the Turtlebot. Proportional control is used, the further the marker are from the robot, the faster the robot move.
